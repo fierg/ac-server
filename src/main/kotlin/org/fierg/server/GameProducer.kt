@@ -9,10 +9,11 @@ import org.fierg.solver.Generator
 object GameProducer {
 
     val server = "TestServer"
+    val topic = "GAME"
     private fun generateAndPublish(){
         val game = Generator.generateRandom(3)
         val gameDTO = EncryptedGameInstance.fromGameInstance(game).toGameDTO(server, 0)
-        MQTTLogger.getMQTTServer().publish("GAME", MqttMessage( Gson().toJson(gameDTO).toByteArray()))
+        MQTTLogger.getMQTTServer().publish(topic, MqttMessage(Gson().toJson(gameDTO).toByteArray()))
     }
     @JvmStatic
     fun main(args: Array<String>) {

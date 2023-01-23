@@ -86,6 +86,14 @@
             <!-- use the same version as your Camel core version -->
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-component -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-component</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-reload4j-->
         <dependency>
             <groupId>org.slf4j</groupId>
