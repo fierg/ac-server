@@ -9,7 +9,7 @@ object Main {
     fun main(args: Array<String>) {
         BasicConfigurator.configure();
         val main = Main()
-        main.configure().addRoutesBuilder(MQTTRouteBuilder())
+        main.configure().addRoutesBuilder(MQTTtoGRPCRouteBuilder())
         main.run(args)
     }
 }
