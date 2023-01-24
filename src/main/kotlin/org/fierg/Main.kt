@@ -1,7 +1,8 @@
-package org.fierg.camel
+package org.fierg
 
 import org.apache.camel.main.Main
 import org.apache.log4j.BasicConfigurator
+import org.fierg.camel.routes.MQTTtoGRPCRouteBuilder
 
 object Main {
     @Throws(Exception::class)

@@ -1,4 +1,4 @@
-package org.fierg.camel
+package org.fierg.camel.routes
 
 import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.component.paho.PahoComponent
