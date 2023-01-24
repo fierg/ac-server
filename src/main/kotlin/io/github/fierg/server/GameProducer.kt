@@ -1,11 +1,11 @@
-package org.fierg.server
+package io.github.fierg.server
 
 import com.google.gson.Gson
+import io.github.fierg.logger.LogConsumer
+import io.github.fierg.logger.impl.MQTTLogger
+import io.github.fierg.model.EncryptedGameInstance
+import io.github.fierg.solver.Generator
 import org.eclipse.paho.client.mqttv3.MqttMessage
-import org.fierg.logger.LogConsumer
-import org.fierg.logger.impl.MQTTLogger
-import org.fierg.model.EncryptedGameInstance
-import org.fierg.solver.Generator
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 

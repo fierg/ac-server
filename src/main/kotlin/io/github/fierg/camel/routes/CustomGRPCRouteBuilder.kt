@@ -1,4 +1,4 @@
-package org.fierg.camel.routes
+package io.github.fierg.camel.routes
 
 import org.apache.camel.builder.RouteBuilder
 

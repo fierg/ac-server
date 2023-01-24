@@ -1,11 +1,12 @@
-package org.fierg.camel.format
+package io.github.fierg.camel.format
 
 import org.apache.camel.Exchange
 import org.apache.camel.spi.DataFormat
-import org.fierg.GameStringRequest
-import org.fierg.camel.utils.Utils.gameStringFromDTO
-import org.fierg.model.dto.GameDTO
+import io.github.fierg.GameStringRequest
+import io.github.fierg.model.dto.GameDTO
+import io.github.fierg.camel.utils.Utils.gameStringFromDTO
 import java.io.InputStream
+import java.io.ObjectOutputStream
 import java.io.OutputStream
 
 class GameStringRequestDataFormat : DataFormat {
@@ -18,8 +19,8 @@ class GameStringRequestDataFormat : DataFormat {
     override fun marshal(exchange: Exchange?, graph: Any?, stream: OutputStream?) {
         if (graph is GameDTO){
             //val game = exchange!!.context.typeConverter.mandatoryConvertTo(ByteArray::class.java, graph)
-            val game = GameStringRequest.newBuilder().setName(gameStringFromDTO(graph)).build()
-            stream!!.write(game.toByteString().toByteArray())
+            val game = GameStringRequest.newBuilder().setPayload(gameStringFromDTO(graph)).build()
+            ObjectOutputStream(stream).write(game.toByteArray())
         } else {
             throw IllegalStateException()
         }

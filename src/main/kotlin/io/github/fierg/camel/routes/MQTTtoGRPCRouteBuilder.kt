@@ -1,12 +1,12 @@
-package org.fierg.camel.routes
+package io.github.fierg.camel.routes
 
+import io.github.fierg.model.dto.GameDTO
 import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.component.paho.PahoComponent
 import org.apache.camel.component.paho.PahoConfiguration
 import org.apache.camel.model.dataformat.JsonLibrary
-import org.fierg.camel.format.GameStringRequestDataFormat
-import org.fierg.camel.processor.GameValidator
-import org.fierg.model.dto.GameDTO
+import io.github.fierg.camel.format.GameStringRequestDataFormat
+import io.github.fierg.camel.processor.GameValidator
 
 class MQTTtoGRPCRouteBuilder : RouteBuilder() {
     override fun configure() {

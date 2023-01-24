@@ -1,6 +1,7 @@
-package org.fierg.camel.utils
+package io.github.fierg.camel.utils
 
-import org.fierg.model.dto.GameDTO
+import io.github.fierg.model.dto.GameDTO
+
 
 object Utils {
     fun gameStringFromDTO(gameDTO: GameDTO) : String {

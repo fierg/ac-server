@@ -28,17 +28,17 @@
         <protobuf-version>3.21.12</protobuf-version>
         <grpc-version>1.51.0</grpc-version>
 
-        <main.class>org.fierg.server.GameProducer</main.class>
+        <main.class>io.github.fierg.server.GameProducer</main.class>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.fierg</groupId>
+            <groupId>io.github.fierg</groupId>
             <artifactId>gRPC-demo</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
             <!-- In case of jar not found in local m2 repository (build seems frozen)-->
             <scope>system</scope>
-            <systemPath>/home/fierg/.m2/repository/org/fierg/gRPC-demo/1.0-SNAPSHOT/gRPC-demo-1.0-SNAPSHOT.jar</systemPath>
+            <systemPath>/home/fierg/.m2/repository/io/github/fierg/gRPC-demo/1.0/gRPC-demo-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
