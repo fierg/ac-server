@@ -93,6 +93,13 @@
             <version>1.4.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-jackson -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jackson</artifactId>
+            <version>3.20.1</version>
+        </dependency>
+
         <dependency>
             <groupId>com.github.salomonbrys.kodein</groupId>
             <artifactId>kodein</artifactId>

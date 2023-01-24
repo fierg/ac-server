@@ -28,7 +28,7 @@ object GameProducer {
     fun main(args: Array<String>) {
         LogConsumer.getImpl().info("Game Publisher started. Publishing to ${MQTTLogger.getMQTTServer().serverURI} @ $topic once every minute.")
         val executor = Executors.newScheduledThreadPool(1)
-        executor.scheduleAtFixedRate(generateRunnable, 0, 10, TimeUnit.SECONDS)
+        executor.scheduleAtFixedRate(generateRunnable, 0, 30, TimeUnit.SECONDS)
     }
 }
 

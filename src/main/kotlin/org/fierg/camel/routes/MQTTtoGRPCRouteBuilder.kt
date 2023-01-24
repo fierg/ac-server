@@ -3,7 +3,10 @@ package org.fierg.camel.routes
 import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.component.paho.PahoComponent
 import org.apache.camel.component.paho.PahoConfiguration
-import org.fierg.logger.LogConsumer
+import org.apache.camel.model.dataformat.JsonLibrary
+import org.fierg.camel.format.GameStringRequestDataFormat
+import org.fierg.camel.processor.GameValidator
+import org.fierg.model.dto.GameDTO
 
 class MQTTtoGRPCRouteBuilder : RouteBuilder() {
     override fun configure() {
@@ -16,11 +19,11 @@ class MQTTtoGRPCRouteBuilder : RouteBuilder() {
         context.addComponent("paho", mqttComponent)
 
         from("paho:GAME")
-            //.unmarshal().jacksonXml(org.fierg.model.dto.GameDTO.class)
-            .process { e ->
-                val body = (e.`in`?.body as? ByteArray)?.let { String(it) }
-                LogConsumer.getImpl().info("$body")
-            }
-            //.to("grpc://localhost:15001/org.fierg.GameServerGrpcKt?method=GameServerCoroutineStub&synchronous=true");
+            .log("Receiving game: ${body()}")
+            .unmarshal().json(JsonLibrary.Jackson, GameDTO::class.java)
+            .process(GameValidator())
+            .log("Sending GameRequestString to grpc ...")
+            .marshal(GameStringRequestDataFormat())
+            .to("grpc://localhost:15001/org.fierg.GameServer?method=solve&synchronous=true");
     }
 }
