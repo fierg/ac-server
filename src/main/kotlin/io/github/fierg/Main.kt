@@ -1,4 +1,4 @@
-package org.fierg
+package io.github.fierg
 
 import org.apache.camel.main.Main
 import org.apache.log4j.BasicConfigurator

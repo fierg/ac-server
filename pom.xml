@@ -11,6 +11,8 @@
 
     <name>ac-server</name>
     <properties>
+        <maven.home>/home/fierg/.m2</maven.home>
+
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,7 +40,7 @@
             <version>1.0</version>
             <!-- In case of jar not found in local m2 repository (build seems frozen)-->
             <scope>system</scope>
-            <systemPath>/home/fierg/.m2/repository/io/github/fierg/gRPC-demo/1.0/gRPC-demo-1.0.jar</systemPath>
+            <systemPath>${maven.home}/repository/io/github/fierg/gRPC-demo/1.0/gRPC-demo-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
